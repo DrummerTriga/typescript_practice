@@ -1,73 +1,47 @@
-# React + TypeScript + Vite
+# 🚀 React + TypeScript: Migration Exercise
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a practical exercise focused on migrating an existing **React (JavaScript)** application to **TypeScript**. The primary goal was to implement static typing to ensure better code reliability, safety, and a superior developer experience.
+From Scrimba.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🎯 Exercise Objectives
+* Configure the development environment for TypeScript support.
+* Convert `.js` and `.jsx` files to `.ts` and `.tsx`.
+* Define **Interfaces** and **Types** for Props and State.
+* Resolve compilation errors and eliminate the `any` type where possible.
+* Properly type form events and DOM references.
 
-## React Compiler
+## 🛠️ Key Steps Taken
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+Here is a summary of the migration process:
 
-## Expanding the ESLint configuration
+1. **Configuration:** Installed necessary dependencies (`typescript`, `@types/react`, `@types/react-dom`) and initialized the `tsconfig.json` file.
+2. **File Conversion:** Systematically renamed files from `.js`/`.jsx` to `.ts`/`.tsx`.
+3. **Component Refactoring:** Replaced `PropTypes` with TypeScript **Interfaces** for better IDE autocompletion.
+4. **Typed Hooks:** Applied specific types to Hooks
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 💻 Technologies Used
+* **React** (Core Library)
+* **TypeScript** (Static Typing)
+* **Vite** (Build Tool)
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🚀 How to Run the Project
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+1. **Clone the repository:**
+   ```bash
+   git clone git@github.com:DrummerTriga/typescript_practice.git
+   ```
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
