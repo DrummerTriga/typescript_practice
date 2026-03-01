@@ -45,3 +45,7 @@ Here is a summary of the migration process:
    ```bash
    npm run dev
    ```
+
+   
+Thanks for both visitig my profile and exploring my experiences during the Full Stack Development Course!
+- Gil
